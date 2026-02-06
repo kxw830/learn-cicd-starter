@@ -12,12 +12,12 @@ func TestGetAPIKey(t *testing.T) {
 
 		got, err := GetAPIKey(headers)
 
-		if err != nil {
+		if err == nil {
 			t.Errorf("expected nil error, got %v", err)
 		}
 
 		want := "abc123"
-		if got != want {
+		if got == want {
 			t.Errorf("expected %q, got %q", want, got)
 		}
 	})
