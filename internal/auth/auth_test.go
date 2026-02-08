@@ -1,8 +1,8 @@
 package auth
 
 import (
-	"testing"
 	"net/http"
+	"testing"
 )
 
 func TestGetAPIKey(t *testing.T) {
@@ -23,9 +23,9 @@ func TestGetAPIKey(t *testing.T) {
 	})
 	t.Run("returns error when authroization header is missing", func(t *testing.T) {
 		headers := http.Header{}
-		
+
 		_, err := GetAPIKey(headers)
-		
+
 		if err == nil {
 			t.Errorf("expected nil error, got %v", err)
 		}
@@ -36,4 +36,3 @@ func TestGetAPIKey(t *testing.T) {
 	})
 
 }
-
